@@ -27,20 +27,20 @@ const navLinks = [
 const NavBar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#121212] bg-opacity-100">
+    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#e0e9f8] bg-opacity-100">
         <div className="flex flex-wrap items-center justify-between mx-auto px-8 py-8">
             <div className="mobile-menu block md:hidden"> 
               {!navbarOpen ? (
                 <button
                     onClick={() => setNavbarOpen(true)}
-                    className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+                    className="flex items-center px-3 py-2 border rounded border-slate-800 text-black hover:text-white hover:border-white"
                 >
                     <Bars3Icon className="h-5 w-5" />
                 </button>
               ) : (
                 <button
                     onClick={() => setNavbarOpen(false)}
-                    className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
+                    className="flex items-center px-3 py-2 border rounded border-slate-800 text-black hover:text-white hover:border-white"
                 >
                     <XMarkIcon className="h-5 w-5" />
                 </button>
