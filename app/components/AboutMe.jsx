@@ -41,7 +41,7 @@ const AboutMe = () => {
             </span>
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            I am a full-time second-year Business and Computer Science Major studying at the University of British Columbia. I am specifically interested in software engineering and AI.
+            I'm a full-time second-year Business and Computer Science Major studying at the University of British Columbia. I'm specifically interested in software engineering, AI, and it's application.
           </p>
           <div>
             <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-purple-500 via-blue-500 to-green-500 hover:bg-slate-200 text-white">
