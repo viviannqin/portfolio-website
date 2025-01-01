@@ -42,7 +42,7 @@ const Projects = () => {
   );
 
   return (
-    <>
+    <section id="projects" className="scroll-mt-24">
       <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-8 text-center mt-14">
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
           My Projects
@@ -76,7 +76,7 @@ const Projects = () => {
           />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 

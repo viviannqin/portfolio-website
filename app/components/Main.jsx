@@ -1,24 +1,25 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Main = () => {
-  const [currentText, setCurrentText] = useState('Vivian');
-  const [fadeClass, setFadeClass] = useState('opacity-100'); // Class to control opacity
+  const [currentText, setCurrentText] = useState("Vivian");
+  const [fadeClass, setFadeClass] = useState("opacity-100"); // Class to control opacity
 
   useEffect(() => {
-    const texts = ['Vivian', 'a Developer'];
+    const texts = ["Vivian", "a Developer"];
     let index = 0;
 
     const interval = setInterval(() => {
       // Start fading out
-      setFadeClass('opacity-0');
+      setFadeClass("opacity-0");
 
       // After fade out, update text and fade back in
       setTimeout(() => {
         index = (index + 1) % texts.length;
         setCurrentText(texts[index]);
-        setFadeClass('opacity-100');
+        setFadeClass("opacity-100");
       }, 1000); // Match this duration with the fade-out animation
     }, 4000); // Total cycle duration (fade-out + text hold)
 
@@ -26,7 +27,7 @@ const Main = () => {
   }, []);
 
   return (
-    <section className="px-4 sm:px-8 lg:px-16">
+    <section id="about" className="px-4 sm:px-8 lg:px-16 mt:10 scroll-mt-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Text Section */}
         <div className="col-span-12 lg:col-span-7 text-center lg:text-left">
@@ -34,22 +35,56 @@ const Main = () => {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
               Hey, I'm{" "}
             </span>
-            <span
-              className={`transition-opacity duration-500 ${fadeClass}`}
-            >
+            <span className={`transition-opacity duration-500 ${fadeClass}`}>
               {currentText}
             </span>
           </h1>
           <p className="text-[#2b2b2b] text-base sm:text-lg mb-6 lg:text-xl">
-            I'm a full-time second-year Business and Computer Science Major studying at the University of British Columbia. I'm specifically interested in software engineering, AI, and it's application.
+            I'm a full-time second-year Business and Computer Science Major
+            studying at the University of British Columbia. I'm specifically
+            interested in software engineering, AI, and its application.
           </p>
-          <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-purple-500 via-blue-500 to-green-500 hover:bg-slate-200 text-white">
-              Connect with Me
+          <div className="flex flex-wrap items-center justify-center lg:justify-start space-x-48">
+            {/* Resume Button */}
+            <button className="px-6 py-3 rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-green-500 hover:bg-slate-200 text-white">
+              View My Resume
             </button>
-            <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-green-500 hover:bg-slate-800 text-black border border-white mt-3">
-              <span className="block bg-white hover:bg-gray-200 rounded-full px-5 py-2">View my Resume</span>
-            </button>
+            {/* Social Media Icons */}
+            <div className="flex items-center space-x-4">
+              {/* GitHub Icon */}
+              <Link href="https://github.com/viviannqin" target="_blank">
+                <Image
+                  src="/images/github.png"
+                  alt="GitHub Icon"
+                  width={40}
+                  height={40}
+                  className="hover:scale-110 transition-transform duration-200"
+                />
+              </Link>
+              {/* LinkedIn Icon */}
+              <Link
+                href="https://www.linkedin.com/in/vivian-qin-2b09b0222/"
+                target="_blank"
+              >
+                <Image
+                  src="/images/linkedin.png"
+                  alt="LinkedIn Icon"
+                  width={40}
+                  height={40}
+                  className="hover:scale-110 transition-transform duration-200"
+                />
+              </Link>
+              {/* Email Icon */}
+              <Link href="mailto:vivianq0420@gmail.com">
+                <Image
+                  src="/images/email.png"
+                  alt="Email Icon"
+                  width={40}
+                  height={40}
+                  className="hover:scale-110 transition-transform duration-200"
+                />
+              </Link>
+            </div>
           </div>
         </div>
 

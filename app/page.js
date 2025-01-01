@@ -14,7 +14,7 @@ export default function Home() {
           background: "linear-gradient(to bottom, #e0e9f8, #e3ebf8, #e6edf8, #eaf0f9, #f8f8fb)",
         }}
       >
-        <div className="container mt-24 mx-auto px-12 py-4">
+        <div className="container mt-24 mx-auto px-12 py-4 pb-24">
           <NavBar />
           <Main />
           <AboutMe />

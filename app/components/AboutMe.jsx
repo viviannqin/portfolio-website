@@ -1,54 +1,95 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 const AboutMe = () => {
-  return (
-    <section className="px-4 sm:px-8 lg:px-16 py-16 py-12 mt-12">
-      {/* About Me Header */}
-      <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-8 text-center">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
-          More About Me
-        </span>
-      </h2>
+  const [activeTab, setActiveTab] = useState("Experiences");
 
-      {/* Grid Layout for Sections */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Experience Section */}
-        <div>
-          <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center">
-            Experience
-          </h3>
-          <ul className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg space-y-4 text-center">
-            <li>Business and Computer Science student @UBC</li>
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "Experiences":
+        return (
+          <ul className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg space-y-3">
+            <li>Business and Computer Science Student @ UBC</li>
             <li>Ascend Co-Director of Operations</li>
-            <li>Accounting Intern @Ford</li>
+            <li>Accounting Intern @ Ford</li>
           </ul>
-        </div>
-
-        {/* Interests Section */}
-        <div>
-          <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center">
-            Interests
-          </h3>
-          <ul className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg space-y-4 text-center">
+        );
+      case "Hobbies":
+        return (
+          <ul className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg space-y-3">
+            <li>🏊‍♂️ Swimming</li>
+            <li>🎵 Music</li>
+            <li>📚 Reading</li>
+            <li>🎨 Drawing</li>
+          </ul>
+        );
+      case "Interests":
+        return (
+          <ul className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg space-y-3">
             <li>Web Development</li>
             <li>Artificial Intelligence</li>
             <li>Machine Learning</li>
             <li>Finance</li>
           </ul>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <section className="px-4 sm:px-8 lg:px-16 py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 items-center">
+    {/* Left Column - About Me Header */}
+        <div className="flex flex-col justify-center">
+            <h1 className="text-black text-3xl sm:text-2xl lg:text-4xl font-extrabold text-center">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+                    More About
+                </span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
+                    Me...
+                </span>
+            </h1>
         </div>
 
-        {/* Hobbies Section */}
+        {/* Right Column - Tabs and Content */}
         <div>
-          <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-bold mb-4 text-center">
-            Hobbies
-          </h3>
-          <ul className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg space-y-4 text-center">
-            <li>Swimming</li>
-            <li>Music</li>
-            <li>Reading</li>
-            <li>Drawing</li>
-          </ul>
+          {/* Tabs */}
+          <div className="flex space-x-4 mb-4 border-b border-gray-300 pb-2">
+            <button
+              className={`text-sm sm:text-base font-bold ${
+                activeTab === "Experiences"
+                  ? "text-purple-500 border-b-2 border-purple-500"
+                  : "text-gray-500 hover:text-purple-500"
+              }`}
+              onClick={() => setActiveTab("Experiences")}
+            >
+              Experiences
+            </button>
+            <button
+              className={`text-sm sm:text-base font-bold ${
+                activeTab === "Interests"
+                  ? "text-purple-500 border-b-2 border-purple-500"
+                  : "text-gray-500 hover:text-purple-500"
+              }`}
+              onClick={() => setActiveTab("Interests")}
+            >
+              Interests
+            </button>
+            <button
+              className={`text-sm sm:text-base font-bold ${
+                activeTab === "Hobbies"
+                  ? "text-purple-500 border-b-2 border-purple-500"
+                  : "text-gray-500 hover:text-purple-500"
+              }`}
+              onClick={() => setActiveTab("Hobbies")}
+            >
+              Hobbies
+            </button>
+          </div>
+
+          {/* Tab Content */}
+          <div>{renderTabContent()}</div>
         </div>
       </div>
     </section>

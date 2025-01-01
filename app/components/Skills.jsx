@@ -1,6 +1,6 @@
 const Skills = () => {
     return (
-      <section className="px-4 sm:px-8 lg:px-16 py-16">
+      <section id="skills" className="px-4 sm:px-8 lg:px-16 py-16 scroll-mt-24">
         {/* Skills Header */}
         <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-8 text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
