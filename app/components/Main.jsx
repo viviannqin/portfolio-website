@@ -27,7 +27,7 @@ const Main = () => {
   }, []);
 
   return (
-    <section id="about" className="px-4 sm:px-8 lg:px-16 mt:10 scroll-mt-24">
+    <section id="about" className="px-4 sm:px-8 lg:px-16 mt-10 scroll-mt-24">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
         {/* Text Section */}
         <div className="col-span-12 lg:col-span-7 text-center lg:text-left">
@@ -44,21 +44,21 @@ const Main = () => {
             studying at the University of British Columbia. I'm specifically
             interested in software engineering, AI, and its application.
           </p>
-          <div className="flex flex-wrap items-center justify-center lg:justify-start space-x-48">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-start gap-4">
             {/* Resume Button */}
-            <button className="px-6 py-3 rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-green-500 hover:bg-slate-200 text-white">
+            {/* <button className="px-6 py-3 w-full sm:w-auto rounded-full bg-gradient-to-br from-purple-500 via-blue-500 to-green-500 hover:bg-slate-200 text-white text-sm sm:text-base">
               View My Resume
-            </button>
+            </button> */}
             {/* Social Media Icons */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-center sm:justify-start gap-4">
               {/* GitHub Icon */}
               <Link href="https://github.com/viviannqin" target="_blank">
                 <Image
                   src="/images/github.png"
                   alt="GitHub Icon"
-                  width={40}
-                  height={40}
-                  className="hover:scale-110 transition-transform duration-200"
+                  width={32}
+                  height={32}
+                  className="hover:scale-110 transition-transform duration-200 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
                 />
               </Link>
               {/* LinkedIn Icon */}
@@ -69,9 +69,9 @@ const Main = () => {
                 <Image
                   src="/images/linkedin.png"
                   alt="LinkedIn Icon"
-                  width={40}
-                  height={40}
-                  className="hover:scale-110 transition-transform duration-200"
+                  width={32}
+                  height={32}
+                  className="hover:scale-110 transition-transform duration-200 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
                 />
               </Link>
               {/* Email Icon */}
@@ -79,9 +79,9 @@ const Main = () => {
                 <Image
                   src="/images/email.png"
                   alt="Email Icon"
-                  width={40}
-                  height={40}
-                  className="hover:scale-110 transition-transform duration-200"
+                  width={32}
+                  height={32}
+                  className="hover:scale-110 transition-transform duration-200 sm:w-8 sm:h-8 lg:w-10 lg:h-10"
                 />
               </Link>
             </div>
