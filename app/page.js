@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Image from "next/image";
 import Main from "./components/Main";
 import NavBar from "./components/NavBar";
@@ -8,6 +9,12 @@ import Projects from "./components/Projects"
 export default function Home() {
   return (
     <div>
+
+      <Head>
+        <title>My Portfolio</title>
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-64x64.png" />
+      </Head>
+
       <main
         className="flex min-h-screen flex-col"
         style={{
