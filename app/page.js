@@ -11,8 +11,9 @@ export default function Home() {
     <div>
 
       <Head>
-        <title>My Portfolio</title>
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-64x64.png" />
+        <title>Vivian&apos;s Portfolio</title>
+        <link rel="icon" href="/favicon.ico" />
+
       </Head>
 
       <main
