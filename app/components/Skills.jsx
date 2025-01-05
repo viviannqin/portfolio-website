@@ -14,7 +14,7 @@ const Skills = () => {
               Languages
             </h3>
             <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              Java, Python, C/C++, SQL, JavaScript, HTML/CSS, R, TypeScript
+              Java, Python, C/C++, HTML/CSS, JavaScript, R, SQL, Typescript, Assembly
             </p>
           </div>
   
@@ -24,7 +24,7 @@ const Skills = () => {
               Frameworks
             </h3>
             <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              React, Node.js, Flask, JUnit
+              React, Node.js, Next.js, Tailwind, JUnit
             </p>
           </div>
   
@@ -34,7 +34,7 @@ const Skills = () => {
               Developer Tools
             </h3>
             <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              Git, Google Cloud Platform, VS Code, Visual Studio, IntelliJ, Jupyter
+              Git, VS Code, IntelliJ, Figma, Latex
             </p>
           </div>
         </div>

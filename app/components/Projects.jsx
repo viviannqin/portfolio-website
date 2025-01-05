@@ -15,7 +15,7 @@ const projectsData = [
   {
     id: 2,
     title: "Budget Buddy",
-    description: "A budget management app that helps users keep track of their expenses.",
+    description: "A budget management app that helps users keep track of their expenses and savings.",
     date: "April 1, 2024",
     tag: ["All", "Personal"],
     gitUrl: "https://github.com/viviannqin/BudgetBuddy",
@@ -23,7 +23,7 @@ const projectsData = [
   {
     id: 3,
     title: "Portfolio",
-    description: "A visually appealing website showcasing skills and projects built using Next.js, Tailwind CSS, and Upstash.",
+    description: "A portfolio website showcasing skills and projects built using Next.js, Tailwind CSS, and Upstash.",
     date: "Dec 30, 2024",
     tag: ["All", "Personal"],
     gitUrl: "https://github.com/viviannqin/portfolio-website",
