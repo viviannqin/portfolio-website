@@ -28,6 +28,14 @@ const projectsData = [
     tag: ["All", "Personal"],
     gitUrl: "https://github.com/viviannqin/portfolio-website",
   },
+  {
+    id: 4,
+    title: "FreshTrack",
+    description: "An app that encourages users to reduce food waste built using React Native, Gemini API, and Supabase.",
+    date: "Jan 19, 2024",
+    tag: ["All", "Personal", "Hackathon"],
+    gitUrl: "https://github.com/viviannqin/FreshTrack",
+  },
 ];
 
 const Projects = () => {
