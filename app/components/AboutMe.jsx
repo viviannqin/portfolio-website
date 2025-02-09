@@ -10,7 +10,8 @@ const AboutMe = () => {
         return (
           <ul className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg space-y-3">
             <li>Business and Computer Science Student @ UBC</li>
-            <li>Ascend Co-Director of Operations</li>
+            <li>UBC Best Software Engineer</li>
+            <li>Ascend Software Developer</li>
             <li>Finance Intern @ Ford</li>
           </ul>
         );
