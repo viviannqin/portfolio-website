@@ -92,7 +92,7 @@ const Main = () => {
         <div className="col-span-12 lg:col-span-5 flex justify-center lg:justify-end mt-6 lg:mt-0">
           <div className="rounded-full overflow-hidden bg-[#181818] w-[250px] h-[250px] lg:w-[300px] lg:h-[300px]">
             <Image
-              src="/images/Headshot.PNG"
+              src="/images/Headshot.png"
               alt="portfolio image"
               width={300}
               height={300}
