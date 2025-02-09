@@ -24,7 +24,7 @@ const Skills = () => {
               Frameworks
             </h3>
             <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              React, Node.js, Next.js, Tailwind, JUnit
+              React, React Native, Node.js, Next.js, Tailwind, JUnit, Vercel, REST APIs, Git
             </p>
           </div>
   
@@ -34,7 +34,7 @@ const Skills = () => {
               Developer Tools
             </h3>
             <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              Git, VS Code, IntelliJ, Figma, Latex
+              GitHub, VS Code, XCode, Expo, IntelliJ IDE, Figma, Latex
             </p>
           </div>
         </div>
