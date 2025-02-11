@@ -33,8 +33,16 @@ const projectsData = [
     title: "FreshTrack",
     description: "An app that encourages users to reduce food waste built using React Native, Gemini API, and Supabase.",
     date: "Jan 19, 2024",
-    tag: ["All", "Personal", "Hackathon"],
+    tag: ["All", "Hackathon"],
     gitUrl: "https://github.com/viviannqin/FreshTrack",
+  },
+  {
+    id: 5,
+    title: "Pup Talk",
+    description: "A chrome extension that changes the tone of any website or input text utilizing OpenAI API.",
+    date: "Feb 9, 2024",
+    tag: ["All", "Hackathon"],
+    gitUrl: "https://github.com/viviannqin/Pup-Talk",
   },
 ];
 
