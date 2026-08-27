@@ -1,46 +1,74 @@
+const skillGroups = [
+  {
+    title: "Languages",
+    tags: [
+      "Java",
+      "Python",
+      "C/C++",
+      "JavaScript",
+      "TypeScript",
+      "HTML/CSS",
+      "R",
+      "SQL",
+      "Assembly",
+    ],
+  },
+  {
+    title: "Frameworks",
+    tags: [
+      "React",
+      "React Native",
+      "Next.js",
+      "Node.js",
+      "Tailwind",
+      "JUnit",
+      "REST APIs",
+    ],
+  },
+  {
+    title: "Tools",
+    tags: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "XCode",
+      "Expo",
+      "IntelliJ",
+      "Figma",
+      "LaTeX",
+      "Vercel",
+    ],
+  },
+];
+
 const Skills = () => {
-    return (
-      <section id="skills" className="px-4 sm:px-8 lg:px-16 py-16 scroll-mt-24">
-        {/* Skills Header */}
-        <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-8 text-center">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">
-            Skills
-          </span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Languages Card */}
-          <div className="bg-gray-100 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200">
-            <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-bold mb-4">
-              Languages
-            </h3>
-            <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              Java, Python, C/C++, HTML/CSS, JavaScript, R, SQL, Typescript, Assembly
-            </p>
-          </div>
-  
-          {/* Frameworks Card */}
-          <div className="bg-gray-100 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200">
-            <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-bold mb-4">
-              Frameworks
-            </h3>
-            <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              React, React Native, Node.js, Next.js, Tailwind, JUnit, Vercel, REST APIs, Git
-            </p>
-          </div>
-  
-          {/* Developer Tools Card */}
-          <div className="bg-gray-100 rounded-lg p-6 shadow-md transition-transform transform hover:scale-105 hover:bg-gray-200">
-            <h3 className="text-black text-lg sm:text-xl lg:text-2xl font-bold mb-4">
-              Developer Tools
-            </h3>
-            <p className="text-[#2b2b2b] text-sm sm:text-base lg:text-lg">
-              GitHub, VS Code, XCode, Expo, IntelliJ IDE, Figma, Latex
-            </p>
-          </div>
-        </div>
-      </section>
-    );
-  };
-  
-  export default Skills;
-  
+  return (
+    <div className="page-container">
+      <div className="page-header">
+        <span className="page-title">Skills</span>
+      </div>
+
+      <div>
+        {skillGroups.map((group, index) => (
+          <section key={group.title}>
+            {index > 0 && <hr className="divider my-8" />}
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-6 md:gap-12">
+              <h2 className="font-serif-display text-2xl sm:text-3xl font-light italic text-[#1a1a1a]">
+                {group.title}
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {group.tags.map((tag) => (
+                  <span key={tag} className="tape-tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Skills;

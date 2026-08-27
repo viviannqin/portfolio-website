@@ -1,95 +1,124 @@
 "use client";
+import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "./MenuOverlay";
 
-const navLinks = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Skills",
-    path: "#skills",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
+const navItems = [
+  { id: "home", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "projects", label: "Projects" },
+  //{ id: "contact", label: "Contact" },
 ];
 
-const NavBar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+const Navbar = ({ activePage, setActivePage }) => {
+  const [mobileOpen, setMobileOpen] = useState(false);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.6 } // Adjust the threshold as needed
-    );
+  const handleNav = (pageId) => {
+    setActivePage(pageId === "home" ? null : pageId);
+    setMobileOpen(false);
+  };
 
-    document.querySelectorAll("section").forEach((section) => {
-      observer.observe(section);
-    });
-
-    return () => observer.disconnect();
-  }, []);
+  const isActive = (pageId) => {
+    if (pageId === "home") return activePage === null;
+    return activePage === pageId;
+  };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-10 bg-[#e0e9f8] bg-opacity-100">
-      <div className="flex flex-wrap items-center justify-between mx-auto px-8 py-8">
-        {/* Mobile Menu Button */}
-        <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e8e8e8]">
+      <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <button
+          onClick={() => handleNav("home")}
+          className="flex items-center gap-3 group"
+        >
+          <Image
+            src="/images/Headshot.PNG"
+            alt="Vivian Qin"
+            width={32}
+            height={32}
+            className="rounded-full object-cover w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+          />
+          <span className="font-nav text-xs text-[#888] group-hover:text-[#1a1a1a] transition-colors duration-700 hidden sm:inline">
+            Vivian Qin
+          </span>
+        </button>
+
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
             <button
-              onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-800 text-black hover:text-white hover:border-white"
+              key={item.id}
+              onClick={() => handleNav(item.id)}
+              className={`nav-link ${isActive(item.id) ? "nav-link-active" : ""}`}
             >
-              <Bars3Icon className="h-5 w-5" />
+              {item.label}
             </button>
-          ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-800 text-black hover:text-white hover:border-white"
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-          )}
+          ))}
+        </nav>
+
+        <div className="hidden md:flex items-center gap-5">
+          <Link
+            href="https://github.com/viviannqin"
+            target="_blank"
+            className="opacity-40 hover:opacity-80 transition-opacity duration-700"
+          >
+            <Image src="/images/github.png" alt="GitHub" width={16} height={16} />
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/vivian-qin-2b09b0222/"
+            target="_blank"
+            className="opacity-40 hover:opacity-80 transition-opacity duration-700"
+          >
+            <Image src="/images/linkedin.png" alt="LinkedIn" width={16} height={16} />
+          </Link>
+          <Link
+            href="mailto:vivianq0420@gmail.com"
+            className="opacity-40 hover:opacity-80 transition-opacity duration-700"
+          >
+            <Image src="/images/email.png" alt="Email" width={16} height={16} />
+          </Link>
         </div>
 
-        {/* Desktop Menu */}
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <a
-                  href={link.path}
-                  className={`transition-colors ${
-                    activeSection === link.path.substring(1)
-                      ? "text-purple-500 font-bold border-b-2 border-purple-500"
-                      : "text-gray-500 hover:text-purple-500"
-                  }`}
-                >
-                  {link.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden p-1 text-[#888] hover:text-[#1a1a1a] transition-colors duration-700"
+          aria-label="Toggle menu"
+        >
+          {mobileOpen ? (
+            <XMarkIcon className="h-5 w-5" />
+          ) : (
+            <Bars3Icon className="h-5 w-5" />
+          )}
+        </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
-      {navbarOpen ? <MenuOverlay links={navLinks} /> : null}
-    </nav>
+      {mobileOpen && (
+        <div className="md:hidden border-t border-[#e8e8e8] bg-white px-6 py-6 animate-slideDown">
+          <nav className="flex flex-col gap-5">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNav(item.id)}
+                className={`nav-link text-left text-sm ${isActive(item.id) ? "nav-link-active" : ""}`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
+          <div className="flex gap-6 mt-6 pt-6 border-t border-[#e8e8e8]">
+            <Link href="https://github.com/viviannqin" target="_blank" className="opacity-50 hover:opacity-100">
+              <Image src="/images/github.png" alt="GitHub" width={20} height={20} />
+            </Link>
+            <Link href="https://www.linkedin.com/in/vivian-qin-2b09b0222/" target="_blank" className="opacity-50 hover:opacity-100">
+              <Image src="/images/linkedin.png" alt="LinkedIn" width={20} height={20} />
+            </Link>
+            <Link href="mailto:vivianq0420@gmail.com" className="opacity-50 hover:opacity-100">
+              <Image src="/images/email.png" alt="Email" width={20} height={20} />
+            </Link>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
 
-export default NavBar;
+export default Navbar;

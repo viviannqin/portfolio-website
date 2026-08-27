@@ -4,21 +4,21 @@ import Link from "next/link";
 
 const ProjectCard = ({ title, description, date, gitUrl }) => {
   return (
-    <div className="relative border border-gray-300 rounded-lg p-6 bg-white shadow-md hover:shadow-lg transition-shadow duration-300 group">
+    <div className="relative border border-black/20 rounded-lg p-6 bg-white/30 backdrop-blur-sm hover:bg-white/40 transition-all duration-300 group">
     
-      <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#f3f4f6] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
+      <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-black/50 bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-60 transition-all duration-500 rounded-lg">
         <Link
             href={gitUrl}
-            className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#2b2b2b] hover:border-white group/link"
+            className="h-14 w-14 mr-2 border-2 relative rounded-full border-white hover:border-blue-400 group/link"
         >
-        <LinkIcon className="h-10 w-10 text-[#2b2b2b] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white" />
+        <LinkIcon className="h-10 w-10 text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-blue-400" />
         </Link>
       </div>
       
       <div>
-        <p className="text-sm text-gray-500 mb-2">{date}</p> {/* Date */}
-        <h5 className="text-2xl font-bold mb-2 text-gray-800">{title}</h5> {/* Title */}
-        <p className="text-gray-600">{description}</p> {/* Description */}
+        <p className="text-sm text-black/50 mb-2">{date}</p>
+        <h5 className="text-2xl font-semibold mb-2 text-black">{title}</h5>
+        <p className="text-black/80">{description}</p>
       </div>
 
     </div>
