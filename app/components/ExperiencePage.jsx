@@ -8,7 +8,8 @@ const internships = [
     title: "Software Engineer Intern",
     period: "May 2026 – Present",
     description:
-      "Contributing to the development and reliability of Trulioo’s global identity verification and risk intelligence platform, helping businesses securely verify customers, prevent fraud, and meet regulatory requirements worldwide"
+      "Contributing to the development and reliability of Trulioo’s global identity verification and risk intelligence platform, helping businesses securely verify customers, prevent fraud, and meet regulatory requirements worldwide",
+    tags: ["C#", ".NET", "xUnit", "Amazon Kinesis", "Redshift", "AWS"],
   },
   {
     company: "Terraforma Systems",
@@ -17,6 +18,7 @@ const internships = [
     period: "Sep 2025 – Dec 2025",
     description:
       "Developed Versility, a full-stack sustainability and waste management platform that helps organizations track waste data, automate reporting, and improve operational visibility",
+    tags: ["React", "TypeScript", "GraphQL", "Node.js", "AWS", "ECS", "S3", "RDS"],
   },
 ];
 
@@ -46,9 +48,18 @@ const ExperienceEntry = ({ exp }) => (
       </p>
     </div>
     <div>
-      <p className="text-[#333] text-sm sm:text-base leading-relaxed font-serif-display">
+      <p className="text-[#333] text-sm sm:text-base leading-relaxed font-serif-display mb-4">
         {exp.description}
       </p>
+      {exp.tags && (
+        <div className="flex flex-wrap gap-2">
+          {exp.tags.map((tag) => (
+            <span key={tag} className="tech-tag">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 );

@@ -23,7 +23,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       <main className="pt-[72px]">
         <div key={activePage || "home"} className="page-enter">

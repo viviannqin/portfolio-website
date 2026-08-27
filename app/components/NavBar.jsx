@@ -25,7 +25,7 @@ const Navbar = ({ activePage, setActivePage }) => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e8e8e8]">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#fafafa]/85 backdrop-blur-sm border-b border-[#e8e8e8]">
       <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
         <button
           onClick={() => handleNav("home")}
@@ -92,7 +92,7 @@ const Navbar = ({ activePage, setActivePage }) => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-[#e8e8e8] bg-white px-6 py-6 animate-slideDown">
+        <div className="md:hidden border-t border-[#e8e8e8] bg-[#fafafa]/95 px-6 py-6 animate-slideDown">
           <nav className="flex flex-col gap-5">
             {navItems.map((item) => (
               <button
